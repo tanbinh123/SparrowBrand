@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head('支付')">
+</head>
+<body>
+
+<header th:replace="common/template_menu::header">
+</header>
+
+<!--content-->
+<div id="BackLink">
+    <a th:href="@{/buy(productId=${product.productId})}">返回</a>
+</div>
+<div id="Catalog">
+    <p>扫码支付</p>
+    <div class="pay">
+        <img src="/images/pay/Alipay.png" class="img-pay" alt=""/>
+    </div>
+    <div class="pay">
+        <img src="/images/pay/Wechat.png" class="img-pay" alt=""/>
+    </div>
+</div>
+<!--content-->
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+
+</body>
+</html>

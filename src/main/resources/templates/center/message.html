@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head('消息通知')">
+</head>
+<body>
+
+<header th:replace="common/template_menu::header">
+</header>
+
+<!--content-->
+<div class="center">
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation"><a href="/center">个人主页</a></li>
+        <li role="presentation" class="active"><a href="/message">消息通知</a></li>
+        <li role="presentation"><a href="/history">历史记录</a></li>
+        <li class="dropdown">
+            <a href="/set" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">设置<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a th:href="@{/account/EditAccount(username=${account.username})}">修改信息</a></li>
+                <li><a href="/SignOut">退出登录</a></li>
+            </ul>
+        </li>
+    </ul>
+    <div class="message">
+        <ul>
+            <li>拍卖成功提醒，查看<a href="#">订单详情</a></li>
+            <li>您上次浏览的商品仍在拍卖当中，继续<a href="#">前往查看</a></li>
+        </ul>
+    </div>
+</div>
+<!--content-->
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+
+</body>
+</html>

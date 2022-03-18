@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head('用户注册')">
+</head>
+
+<body>
+<header th:replace="common/template_menu::header">
+</header>
+
+<div id="Content">
+
+    <script type="text/javascript">
+        var xmlHttpRequest;
+        function createXMLHttpRequest()
+        {
+            if (window.XMLHttpRequest) //非IE浏览器
+            {
+                xmlHttpRequest = new XMLHttpRequest();
+            }
+            else if (window.ActiveObject)//IE6以上浏览器
+            {
+                xmlHttpRequest = new ActiveObject("Msxml2.XMLHTTP");
+            }
+            else //IE6及以下浏览器
+            {
+                xmlHttpRequest = new ActiveObject("Microsoft.XMLHTTP");
+            }
+        }
+
+        function usernameIsExist()
+        {
+            var username = document.newAccount.username.value;
+            sendRequest("/usernameValidation?username="+username);
+        }
+
+        function sendRequest(url){
+            createXMLHttpRequest();
+            xmlHttpRequest.open("GET", url, true);
+            xmlHttpRequest.onreadystatechange = processResponse;
+            xmlHttpRequest.send(null);
+        }
+
+        function processResponse(){
+            if(xmlHttpRequest.readyState == 4){
+                if(xmlHttpRequest.status == 200){
+                    var responseInfo = xmlHttpRequest.responseXML.getElementsByTagName("msg")[0].firstChild.data;
+                    var div1 = document.getElementById("usernameInfo");
+                    if(responseInfo == "Exist"){
+                        div1.innerHTML="<font color='red'>The User ID is Exist</font>";
+                    }
+                    else{
+                        div1.innerHTML="<font color='green'>The User ID is Available</font>";
+                    }
+                }
+            }
+        }
+
+    </script>
+
+    <div id="Catalog">
+        <form action="#" name="newAccount" th:action="@{/SaveAccount}" th:object="${account}" method="post" >
+            <p>用户信息</p>
+            <table align="center" style="border-collapse:separate; border-spacing:0px 10px;">
+                    <tr>
+                        <td>用&nbsp;&nbsp;户&nbsp;&nbsp;名：</td>
+                        <td>
+                             <input type="text" name="username" th:field="*{username}" id="username" onkeyup="usernameIsExist();"/>
+                        </td>
+                    </tr>
+                    <tr>
+                         <td>输入密码：</td>
+                         <td><input type="password" th:field="*{password}" name="password" /></td>
+                    </tr>
+                    <tr>
+                        <td>重复密码：</td>
+                        <td><input type="password" th:field="*{password}" name="repeatedPassword" /></td>
+                    </tr>
+                    <tr>
+                         <td>住&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</td>
+                         <td><input type="text" name="address" id="address"/></td>
+                    </tr>
+                    <tr>
+                        <td>电话号码：</td>
+                        <td><input type="text" name="phone" id="phone"/></td>
+                    </tr>
+                    <tr>
+                        <td>电子邮箱：</td>
+                        <td><input type="email" name="email" id="email"/></td>
+                    </tr>
+            </table>
+            <h2><input type="checkbox" />我已阅读并同意<a href="/confirm" style="color: #e4b9b9">《服务条款》</a></h2>
+            <p><a href="/account/EditAccount"><input type="submit" name="newAccount" value="注册" /></a></p>
+        </form>
+    </div>
+
+</div>
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+</body>
+</html>

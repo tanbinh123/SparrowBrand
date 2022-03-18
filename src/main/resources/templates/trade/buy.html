@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head(${product.name} + '详细介绍')">
+</head>
+<body>
+
+<header th:replace="common/template_menu::header">
+</header>
+
+<!--content-->
+<div id="BackLink">
+    <a th:href="@{/catalog/product(productId=${product.productId})}">返回</a>
+</div>
+
+<div id="Catalog">
+        <form action="#" name="" th:action="@{#}"  method="post">
+            <p th:text="${product.name} + '详细介绍'"></p>
+            <table align="center" class="table table-hover">
+                <tr>
+                    <td>卖品编号</td>
+                    <td th:text="${product.productId}"></td>
+                </tr>
+                <tr>
+                    <td>卖品名称</td>
+                    <td th:text="${product.name}"></td>
+                </tr>
+                <tr>
+                    <td>起拍价</td>
+                    <td th:text="${product.price}"></td>
+                </tr>
+                <tr>
+                    <td>拍卖人</td>
+                    <td  th:text="${username}"></td>
+                </tr>
+                <tr>
+                    <td>给出的拍卖价</td>
+                    <td><input type="text" name="price"/></td>
+                </tr>
+            </table>
+            <p class="buy"><a th:href="@{/pay(productId=${product.productId})}"  class="btn btn-primary btn-lg active" role="button">确  定</a></p>
+        </form>
+</div>
+<!--content-->
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+
+</body>
+</html>

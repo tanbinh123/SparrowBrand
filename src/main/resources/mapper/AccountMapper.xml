@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.csu.sparrowbrand.persistence.AccountMapper">
+
+    <select id="getAccountByUsername" parameterType="java.lang.String" resultType="org.csu.sparrowbrand.domain.Account">
+    SELECT
+          SIGNON.USERNAME,
+          ACCOUNT.ADDRESS,
+          ACCOUNT.PHONE,
+          ACCOUNT.EMAIL,
+          ACCOUNT.VALUE
+    FROM ACCOUNT, SIGNON
+    WHERE ACCOUNT.USERNAME = #{username}
+    AND SIGNON.USERNAME = ACCOUNT.USERNAME
+  </select>
+
+    <select id="getAccountByUsernameAndPassword" parameterType="org.csu.sparrowbrand.domain.Account" resultType="org.csu.sparrowbrand.domain.Account">
+    SELECT
+      SIGNON.USERNAME,
+      ACCOUNT.ADDRESS,
+      ACCOUNT.PHONE,
+      ACCOUNT.EMAIL,
+      ACCOUNT.VALUE
+    FROM ACCOUNT,SIGNON
+    WHERE ACCOUNT.USERNAME = #{username}
+      AND SIGNON.PASSWORD = #{password}
+      AND SIGNON.USERNAME = ACCOUNT.USERNAME
+
+  </select>
+
+    <update id="updateAccount" parameterType="org.csu.sparrowbrand.domain.Account">
+    UPDATE ACCOUNT SET
+      ADDRESS = #{address},
+      PHONE = #{phone},
+      EMAIL = #{email}
+    WHERE USERNAME = #{username}
+  </update>
+
+    <insert id="insertAccount" parameterType="org.csu.sparrowbrand.domain.Account">
+    INSERT INTO ACCOUNT
+      (USERNAME, ADDRESS, PHONE, EMAIL, VALUE)
+    VALUES
+      (#{username}, #{address}, #{phone}, #{email}, '0')
+    </insert>
+
+    <update id="updateSignon" parameterType="org.csu.sparrowbrand.domain.Account">
+    UPDATE SIGNON SET PASSWORD = #{password}
+    WHERE USERNAME = #{username}
+    </update>
+
+    <insert id="insertSignon" parameterType="org.csu.sparrowbrand.domain.Account">
+        INSERT INTO SIGNON (PASSWORD,USERNAME)
+        VALUES (#{password}, #{username})
+    </insert>
+
+</mapper>

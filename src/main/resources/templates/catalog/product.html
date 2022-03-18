@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head(('义卖品' + ${product.name}))">
+</head>
+<body>
+
+<header th:replace="common/template_menu::header">
+</header>
+
+<!--content-->
+<div id="BackLink">
+    <a th:href="@{/catalog/category(categoryId=${category.categoryId})}">返回</a>
+</div>
+<div class="showing">
+    <div class="category" th:text="${category.name}"></div>
+    <p class="desn1" th:text="${product.name}"></p>
+    <div class="product" th:utext="${product.description}"></div>
+    <p class="desn2" th:text="'起拍价：￥'+ ${product.price}"></p>
+    <p class="buy"><a th:href="@{/buy(productId=${product.productId})}"  class="btn btn-primary btn-lg active" role="button">竞 拍</a></p>
+</div>
+<!--content-->
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+
+</body>
+</html>

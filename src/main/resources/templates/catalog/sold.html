@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head(${sold.productId} +'详细介绍')">
+</head>
+<body>
+
+<header th:replace="common/template_menu::header">
+</header>
+
+<!--content-->
+<div id="BackLink">
+    <a th:href="@{/catalog/main}">返回</a>
+</div>
+<div id="Content">
+    <div id="Catalog">
+        <table align="center" class="table table-hover">
+            <tr>
+                <td>拍卖号</td>
+                <td th:text="${sold.donateId}"></td>
+            </tr>
+            <<tr>
+                <td>卖品名称</td>
+                <td th:text="${sold.productId}"></td>
+            </tr>
+            <tr>
+                <td>拍卖定价</td>
+                <td th:text="${sold.price}"></td>
+            </tr>
+            <tr>
+                <td>拍卖时间</td>
+                <td th:text="${sold.buy_time}"></td>
+            </tr>
+            <tr>
+                <td>义卖人</td>
+                <td th:text="${sold.username}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!--content-->
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+
+</body>
+</html>

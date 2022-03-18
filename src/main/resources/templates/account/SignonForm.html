@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head('用户登录')">
+</head>
+<body>
+<header th:replace="common/template_menu::header">
+</header>
+
+<div id="Content">
+
+    <script>
+        function reloadImage() {
+            document.getElementById("image").src = '/createImage?'+(new Date()).getTime();
+        }
+    </script>
+
+    <div id="Catalog">
+        <form action="/Sign"  method="post">
+            <p>用户信息</p>
+            <table align="center" style="border-collapse:separate; border-spacing:0px 10px;">
+                <tr>
+                    <td>用户名：</td>
+                    <td><input type="text" name="username"  /></td>
+                </tr>
+                <tr>
+                    <td>密&nbsp;&nbsp;&nbsp;&nbsp;码：</td>
+                    <td><input type="password" name="password" /></td>
+                </tr>
+                <tr>
+                    <td>验证码：</td>
+                    <td><input id="checkcode" name="checkcode" type="text" /></td>
+                </tr>
+            </table>
+            <img src="/createImage" id="image"  onclick="reloadImage()"/>
+            <p><span id="checkcode_msg" class="required"></span></p>
+            <p><input type="submit" name="signon" value="登录"/></p>
+        </form>
+        <h2>立即&nbsp;<a href="/Register">注册!</a></h2>
+    </div>
+
+</div>
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+</body>
+</html>

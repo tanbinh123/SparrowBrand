@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head('捐物中心')">
+</head>
+<body>
+
+<header th:replace="common/template_menu::header">
+</header>
+
+<!--content-->
+<div class="center">
+    <ul class="nav nav-tabs nav-justified">
+        <li role="presentation"><a href="/money-donation">捐款</a></li>
+        <li role="presentation" class="active"><a href="/item-donation">捐物</a></li>
+    </ul>
+    <div style="margin-top: 100px;">
+        <img src="/images/donate_item.png" width="330px" height="340px" align="center">
+    </div>
+    <a href="#" class="btn btn-primary btn-lg active" role="button" align="center" style="margin-top:50px;">我想捐物</a>
+</div>
+<!--content-->
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+
+</body>
+</html>

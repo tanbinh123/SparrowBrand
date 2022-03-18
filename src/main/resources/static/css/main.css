@@ -1,0 +1,190 @@
+.help{
+    margin-top: 30px;
+    width: 80%;
+    height: 1100px;
+    background-color: -moz-default-background-color;
+    font-family: '宋体';
+    margin: 0 auto;
+    font-size: 15px;
+}
+
+#Content {
+    margin: 0;
+    padding: 0ex 0ex 0ex 0ex;
+    width: 99%;
+    color: #333;
+    background-color: #FFF;
+    border-width: 0;
+}
+
+#Separator {
+    clear:both;
+    margin: 0;
+    height:0;
+}
+
+#Main {
+    margin: 0;
+    padding: 1ex;
+    color: #333;
+    background-color: #FFF;
+    border-width: 1ex 0ex 2ex 0px;
+    border-style: solid;
+    border-color: #fff;
+}
+
+#Sidebar {
+    float: left;
+    background:inherit;
+    width: 30%;
+}
+
+#MainImage {
+    float: left;
+    background:inherit;
+    text-align:center;
+    width: 50%;
+}
+
+#Catalog {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 1ex;
+    background:inherit;
+    text-align:center;
+}
+
+#Catalog p{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 25px;
+    padding: 10px 0 10px 0;
+}
+
+#Catalog input{
+    border: 1px solid lightgrey;
+}
+
+#Catalog input[type="submit"]{
+    padding: .3ex;
+    color: #fff;
+    background-color: #005e21;
+    text-decoration: none;
+    font-family: helvetica, tahoma, arial, verdana, sans-serif;
+    font-size: 1.5ex;
+    border-width:0;
+}
+#Catalog input[type="submit"]:hover {
+    color: #000;
+    background-color: #54c07a;
+    cursor:pointer;
+}
+
+#Catalog table tr{
+    font-size: 18px;
+    line-height: 10px;
+}
+
+#BackLink{
+    padding: 1ex;
+    float: right;
+    border-width: .1ex 0ex .1ex 0ex;
+    border-style: solid;
+    border-color: #000;
+}
+
+.showing{
+    width: 80%;
+    height:550px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    margin-left: 150px;
+    border: 2px solid #bce8f1;
+}
+
+.category{
+    height:50px;
+    font-size: 30px;
+    background-color: lightblue;
+    font-weight: bolder;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    line-height: 50px;
+}
+
+.desn1{
+    text-align: center;
+    font-size: 20px;
+    font-family: '楷体';
+    font-weight: bolder;
+    margin: 10px 0 10px 0;
+}
+
+.product{
+    text-align: center;
+}
+
+.desn2{
+    text-align: center;
+    font-size: 20px;
+    font-family: '宋体';
+    font-weight: bolder;
+    margin: 20px 0 20px 0;
+}
+
+.buy{
+    text-align: center;
+}
+
+.center{
+    text-align: center;
+    width: 100%;
+    height:700px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.img-responsive:hover{
+    box-shadow: darkgrey 5px 5px 5px 5px;
+}
+
+.pay{
+    margin: 20px 0 10px 0;
+}
+
+.img-pay{
+    width: 200px;
+    height: 200px;
+}
+
+.history{
+    width: 100%;
+    height: 500px;
+    margin-top: 60px;
+    padding-left:150px;
+}
+.history_box{
+    width: 250px;
+    height: 250px;
+    border: 2px solid lightblue;
+    border-radius: 15px;
+    margin: 0 30px 20px 30px;
+    padding: 30px 30px 30px 30px;
+}
+.person{
+    margin: 30px 100px 30px 100px;
+    border: 2px solid lightblue;
+    height: 550px;
+}
+.person p{
+    margin-top: 15px;
+}
+.message{
+    margin: 30px 30px 30px 30px;
+}
+.message ul li{
+    height: 15px;
+    color: grey;
+    font-size: 20px;
+    margin: 50px 0 30px 100px;
+}

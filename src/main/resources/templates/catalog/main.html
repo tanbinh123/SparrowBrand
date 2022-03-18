@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head(('爱心义卖网首页'))">
+</head>
+<body>
+<header th:replace="common/template_menu::header">
+</header>
+
+<!-- our -->
+<div id="BackLink">
+    <a href="/index">返回</a>
+</div>
+<div class="Latest">
+    <div class="container">
+        <h3>卖品展示</h3>
+        <div class="lat-top">
+            <div class="col-md-6 Latest-top">
+                <div class="Lat-lft">
+                    <a href="/catalog/category?categoryId=PAINTING"><img src="/images/category/painting.jpg" class="img-responsive" alt=""/></a>
+                </div>
+                <div class="Lat-rgt">
+                    <h6>书画</h6>
+                    <a href="/catalog/category?categoryId=PAINTING"><h4>Painting & Calligraphy</h4></a>
+                    <p>笔墨勾勒的是美，善意透露的也是美，美是藏不住的。</p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-6 Latest-top">
+                <div class="Lat-lft">
+                    <a href="/catalog/category?categoryId=SCULPTURE"><img src="/images/category/sculpture.jpg" class="img-responsive" alt=""/></a>
+                </div>
+                <div class="Lat-rgt">
+                    <h6>雕塑</h6>
+                    <a href="/catalog/category?categoryId=SCULPTURE"><h4>Carve & Mould</h4></a>
+                    <p>笨拙的手雕刻不出完美，但可以传递温度。 </p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="lat-top">
+            <div class="col-md-6 Latest-top">
+                <div class="Lat-lft">
+                    <a href="/catalog/category?categoryId=ART"><img src="/images/category/jewellery.jpg" class="img-responsive" alt=""/></a>
+                </div>
+                <div class="Lat-rgt">
+                    <h6>工艺品</h6>
+                    <a href="/catalog/category?categoryId=ART"><h4>Art & Craft</h4></a>
+                    <p>在收藏历史的同时，献一份爱心，让它那曾经的辉煌和荣耀重现。</p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="col-md-6 Latest-top">
+                <div class="Lat-lft">
+                    <a href="/catalog/category?categoryId=JEWELLERY"><img src="/images/category/art.jpg" class="img-responsive" alt=""/></a>
+                </div>
+                <div class="Lat-rgt">
+                    <h6>饰品</h6>
+                    <a href="/catalog/category?categoryId=JEWELLERY"><h4>Jewellery & Ornament</h4></a>
+                    <p>首饰的贵重，不止在于用料金银，更在于意义，一份温暖别人的善意。</p>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="late-bootm">
+            <h3>最新资讯</h3>
+            <div class="col-md-4 nw-top">
+                <a href="/catalog/sold?soldId=00001"><img src="/images/category/sold1.png" class="img-responsive" alt=""/></a>
+                <h6>￥30000.00（已成交）</h6>
+                <h4>明朝美玉</h4>
+            </div>
+            <div class="col-md-4 nw-top">
+                <a href="/catalog/sold?soldId=00002"><img src="/images/category/sold2.jpg" class="img-responsive" alt=""/></a>
+                <h6>￥20000.00（已成交）</h6>
+                <h4>慈禧串珠</h4>
+            </div>
+            <div class="col-md-4 nw-top">
+                <a href="/catalog/sold?soldId=00003"><img src="/images/category/sold3.jpg" class="img-responsive" alt=""/></a>
+                <h6>￥40000.00（已成交）</h6>
+                <h4>“精气神”字画</h4>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="sponsor">
+            <h3>想加入我们的团队、组织吗？</h3>
+            <P>我们团队致力于为广大爱心人士提供更加便捷的平台，向社会伸出自己的援助之手。我们承诺所筹集的善款必将送到有需要的人手中，我们坚信：慈善融真情，爱心无止境。</P>
+            <a class="hvr-shutter-in-horizontal" th:href="@{/help}">了解更多</a>
+        </div>
+    </div>
+</div>
+<!-- our -->
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+</body>
+</html>

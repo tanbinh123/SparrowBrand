@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/page_head::head(('爱心义卖网--萍水知温意'))">
+</head>
+<body>
+<header th:replace="common/page_menu::header">
+</header>
+
+<div class="content">
+    <div class="things">
+        <ul>
+            <li><a href="#"><img src="images/1.jpg" th:src="@{/images/1.jpg}"></a></li>
+            <li><a href="#"><img src="images/2.jpg" th:src="@{/images/2.jpg}"></a></li>
+            <li><a href="#"><img src="images/3.jpg" th:src="@{/images/3.jpg}"></a></li>
+            <li><a href="#"><img src="images/4.png" th:src="@{/images/4.png}"></a></li>
+            <li><a href="#"><img src="images/5.jpg" th:src="@{/images/5.jpg}"></a></li>
+            <li><a href="#"><img src="images/6.png" th:src="@{/images/6.png}"></a></li>
+        </ul>
+        <div class="left_arrow">《</div>
+        <div class="right_arrow">》</div>
+    </div>
+</div>
+<div class="enter">
+    <a href="/catalog/main"  class="btn btn-primary btn-lg active enter_btn" role="button">进  入</a>
+</div>
+
+<footer th:replace="common/page_menu::footer">
+</footer>
+</body>
+</html>

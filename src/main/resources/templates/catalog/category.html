@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head(('义卖品种类' + ${category.name}))">
+</head>
+<body>
+<header th:replace="common/template_menu::header">
+</header>
+
+<!-- our -->
+<div id="BackLink">
+    <a href="/catalog/main">返回</a>
+</div>
+<div id="Content">
+    <div id="Catalog">
+        <p th:text="${category.name}">category name</p>
+        <table align="center" class="table table-hover">
+            <tr>
+                <td>物品编号</td>
+                <td>物品名称</td>
+            </tr>
+            <!-- LIST -->
+            <tr th:each="product : ${productList}">
+                <td>
+                    <a th:href="@{/catalog/product(productId=${product.productId})}" th:text="${product.productId}">FL-DLH-02</a>
+                </td>
+                <td th:text="${product.name}">Persian</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- our -->
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+</body>
+</html>

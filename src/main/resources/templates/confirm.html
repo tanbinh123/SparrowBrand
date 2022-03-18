@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/page_head::head('服务条款')">
+</head>
+<body>
+
+<header th:replace="common/page_menu::header">
+</header>
+
+<!--content-->
+<div id="BackLink" style="padding: 1ex;float: right;border-width: .1ex 0ex .1ex 0ex;border-style: solid;border-color: #000;">
+    <a th:href="@{/Register}">返回</a>
+</div>
+<div id="Catalog" style=" margin-top: 50px;margin-bottom: 30px;padding: 1ex; background:inherit;text-align:center;height: 500px;">
+    <p>服务条款</p>
+</div>
+<!--content-->
+
+<footer th:replace="common/page_menu::footer">
+</footer>
+
+</body>
+</html>

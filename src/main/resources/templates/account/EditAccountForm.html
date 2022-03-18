@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common/template_head::head('修改账户信息')">
+</head>
+<body>
+<header th:replace="common/template_menu::header">
+</header>
+
+<div id="Content">
+
+	<div id="Catalog">
+		<form action="#" th:action="@{/SaveEdit(username=${account.username})}" th:object="${account}" method="post">
+			<p>账户信息修改</p>
+			<table align="center" style="border-collapse:separate; border-spacing:0px 10px;">
+				<tr>
+					<td>用&nbsp;户&nbsp;名：</td>
+					<td th:text="${account.username}"></td>
+				</tr>
+				<tr>
+					<td>新&nbsp;密&nbsp;码：</td>
+					<td><input id="stripes--517137302" th:field="*{password}" name="password" type="text">
+						<script type="text/javascript">
+                            setTimeout(
+                                function() {
+                                    try {
+                                        var z = document
+                                            .getElementById('stripes--517137302');
+                                        z.focus();
+                                        z.select();
+                                    } catch (e) {
+                                    }
+                                }, 1);
+						</script>
+					</td>
+				</tr>
+				<tr>
+					<td>重复密码：</td>
+					<td><input name="repeatedPassword" type="text"></td>
+				</tr>
+				<tr>
+					<td>住&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</td>
+					<td><input type="text" name="address" id="address"/></td>
+				</tr>
+				<tr>
+					<td>电话号码：</td>
+					<td><input type="text" name="phone" id="phone"/></td>
+				</tr>
+				<tr>
+					<td>电子邮箱：</td>
+					<td><input type="email" name="email" id="email"/></td>
+				</tr>
+			</table>
+
+			<p><input type="submit" name="editAccount" value="保存信息"/></p>
+		</form>
+	</div>
+
+</div>
+
+<footer th:replace="common/template_menu::footer">
+</footer>
+</body>
+</html>
